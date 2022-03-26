@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUEjs</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://unpkg.com/vue@3"></script><!--para usar vue importarlo-->
+</head>
+<body>
+    
+
+    <div id="app"><!--toto lo que este dentro de este id podran acceder a la funcion "app" de vue-->
+        <h1>
+            <!-- {{ message }} {{ name }} -->
+            <!-- en src y class practicamente le pasa una variable -->
+            <!-- v-bind= view binding, significa que le pasaremos la foto mediante una variable -->
+            <img v-bind:src="foto" alt="foto perfil" :class="genero"><!--Traer foto desde vuejs, tambien puede estar solamanete los dos puntos-->
+            <h1>{{title}} {{nombre}} {{apellido}}</h1>
+            <h3>Email: {{email}}</h3>
+                                <!-- "genero" es una variable que tiene el mismo valor en css y en lo que devuelve vue; si vue devuelve female esa clase ya esta en css y se ponen los estilos -->
+            <button v-on:click="cambiarUsuario()" :class="genero">Tener un usuario ramdom</button><!---v-on:click="imprimirNombre()"= es como un onclick-->
+        </h1>
+    </div>    
+
+    <!-- <script>
+        Vue.createApp({
+            data() {
+                return {
+                message: 'Hello!',
+                name: 'explorers'
+            }
+        }
+    }).mount('#app')    //.mount = donde voy a montarlo
+    //app.mount('#app');//es lo mismo que el anterior
+    </script> -->
+
+
+    <script src="app.js"></script>    
+</body>
+</html>
